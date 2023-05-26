@@ -22,9 +22,11 @@ function calculateProbabilities(integerArray) {
     
         probabilities.set(number, probability);
     });
-    
+
+    console.log(probabilities);
+
     /* Probability is in the second position of the array in each map entry, so it's acceces with const variable PROBABILITY_VALUE */
-    const sortedProbabilities = new Map([...probabilities.entries()].sort((j, l) => j[PROBABILITY_VALUE] - l[PROBABILITY_VALUE]));
+    const sortedProbabilities = new Map([...probabilities.entries()].sort((j, l) => l[PROBABILITY_VALUE] - j[PROBABILITY_VALUE]));
     
     return Array.from(sortedProbabilities.keys());
 }
